@@ -12,4 +12,20 @@ body{
   --green: #0ACF83;
   --orange: #F24E1E;
   --blue: #1ABCFE;
+  --purpleGradient: linear-gradient(180deg, #A259FF 0%, rgba(162, 89, 255, 0.6) 100%);
+  --greyGradient: linear-gradient(180deg, #212121 0%, rgba(33, 33, 33, 0.4) 100%);
+
+  --backdrop-filter: blur(10px);
+  --border-radius-button: 4px;
+  --border-radius-card: 10px;
+
+  --font-size-heading: 2.5rem;
+  --font-size-semibold: 1.125rem;
+  --font-size-medium: .9375rem;
+  --font-size-text: .75rem;
+
+  --font-weight-heading: 900;
+  --font-weight-semibold: 700;
+  --font-weight-medium: 400;
+  --font-weight-text: 300;
 }

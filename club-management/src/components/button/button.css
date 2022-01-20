@@ -1,0 +1,40 @@
+.btn-line{
+    background-color: transparent;
+    border: none;
+    color: var(--greyOne);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-text);
+}
+.btn-normal{
+    background: var(--purpleGradient);
+    border: none;
+    color: var(--greyOne);
+    padding: 2vh 2vw;
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+}
+.btn-border{
+    border: none;
+    color: var(--greyOne);
+    padding: 2vh 2vw;
+    border: solid #A259FF .125rem;
+    background: transparent;
+    border-radius: var(--border-radius-button);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+}
+.btn-border:hover{
+    border: none;
+    color: var(--greyOne);
+    padding: 2vh 2vw;
+    border: solid #A259FF .125rem;
+    background: var(--purpleGradient);
+    border-radius: var(--border-radius-button);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+}
