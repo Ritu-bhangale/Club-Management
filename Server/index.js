@@ -8,9 +8,8 @@ const app = express();
 
 const mongoose = require('Mongoose');
 
-mongoose.connect("",{
-})
+mongoose.connect("mongodb+srv://Shrishti18:Shrits@club.zohnb.mongodb.net/clubName?retryWrites=true&w=majority", {})
 
-app.listen(3001,(req,res)=>{
+app.listen(3001, (req, res) => {
     console.log("server running");
 })
