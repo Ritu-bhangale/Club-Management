@@ -1,13 +1,25 @@
 import './App.css';
+import Register from './pages/register/register';
+import Login from './pages/login/login';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-    <h1>Landing page</h1>
-    <p>Lorem, ipsum.</p>
-    <h2>Lorem, ipsum dolor.</h2>
-    <h3>Lorem ipsum dolor sit.</h3>
-    </div>
+    <>
+    <Router>
+      <Routes>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+    </Router>
+    </>
   );
 }
 
