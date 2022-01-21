@@ -1,3 +1,48 @@
-.h1 {
-    text-align: center;
+.half-grey {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--greyGradient);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: var(--border-radius-card);
 }
+
+.left-side {
+    margin-top: 40vh;
+    margin-left: 20vw;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+input[type=text],
+input[type=password] {
+    width: 50%;
+    box-sizing: content-box;
+    border: none;
+    border-bottom: 2px solid;
+    background: none;
+    color: var(--shadeFive);
+}
+
+input {
+    outline: none;
+}
+
+label {
+    color: #5F5948;
+}
+
+.form-part {
+    width: 100%;
+    margin-left: 10vw;
+}
+
+
+/* Button {
+    width: 20%;
+} */
