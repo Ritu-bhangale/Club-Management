@@ -13,4 +13,4 @@ router.post('/signup',(request,response)=>{
     .catch(err=>{response.json(err)})
 })
 
-module.exports = router;
+export default router;

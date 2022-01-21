@@ -4,7 +4,7 @@ import Mongoose from 'mongoose';
 import cors from 'cors'
 import dotenv from 'dotenv'
 
-import routeURLs from '/Server/routes/routes'
+import routeURLs from './Routes/routes.js'
 
 dotenv.config();
 
