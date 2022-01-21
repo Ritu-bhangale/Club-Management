@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import signUpTemplateCopy = require('../models/signupmodels')
+signUpTemplateCopy = require('../models/signupmodels')
 
 router.post('/signup', (request, response) => {
     const signedupUser = new signUpTemplateCopy({
