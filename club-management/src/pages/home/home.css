@@ -1,0 +1,28 @@
+body{
+    background-image: url(../../../public/Assets/backgroundLanding.png);
+}
+
+.nav-button{
+    margin-left: 75%;
+    margin-right: 3vw;
+    margin-top: 5vh;
+}
+.nav-button Button{
+    margin-left: 2vw;
+}
+h1{
+    color: var(--greyOne);
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-heading);
+    text-align: center;
+    margin-top: 25vh;
+}
+.line{
+    background-color: var(--orange);
+    height: 10vh;
+    width: 0.1vw;
+    display: block;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 35vh;
+}

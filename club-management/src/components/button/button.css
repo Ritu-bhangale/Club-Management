@@ -20,7 +20,7 @@
 .btn-border{
     border: none;
     color: var(--greyOne);
-    padding: 2vh 2vw;
+    padding: 1.8vh 1.8vw;
     border: solid #A259FF .125rem;
     background: transparent;
     border-radius: var(--border-radius-button);
@@ -31,7 +31,7 @@
 .btn-border:hover{
     border: none;
     color: var(--greyOne);
-    padding: 2vh 2vw;
+    padding: 1.8vh 1.8vw;
     border: solid #A259FF .125rem;
     background: var(--purpleGradient);
     border-radius: var(--border-radius-button);
