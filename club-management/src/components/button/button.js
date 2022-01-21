@@ -3,7 +3,7 @@ import "./button.css";
 
 const STYLES = ["btn-line", "btn-normal","btn-border"];
 
-const Button = ({ children, onClick, buttonStyle, buttonSize }) => {
+const Button = ({ children, onClick, buttonStyle }) => {
     const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
