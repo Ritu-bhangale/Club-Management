@@ -1,16 +1,10 @@
 import express from 'express';
+import { registerData } from '../controllers/registerController.js';
+import { loginData } from '../controllers/loginController.js';
 const router = express.Router();
-signUpTemplateCopy = require('../models/signupmodels')
+import signUpTemplateCopy from '../models/registerModels.js'
 
-router.post('/signup', (request, response) => {
-    const signedupUser = new signUpTemplateCopy({
-        fullName: request.body.fullName,
-        email: request.body.email,
-        password: request.body.password,
-    })
-    signedupUser.save()
-        .then(data => { response.json(data) })
-        .catch(err => { response.json(err) })
-})
+router.post('/register', registerData);
+router.post('/login', loginData);
 
 export default router;

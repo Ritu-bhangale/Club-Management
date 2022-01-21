@@ -3,8 +3,8 @@ import bodyParser from 'body-parser';
 import Mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-const routeurl = require('../Server/Routes/routes')
 
+import routesUrl from './routes/routes.js'
 
 dotenv.config();
 
