@@ -1,0 +1,66 @@
+.first-heading,
+.second-heading,
+.third-heading {
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-semibold);
+    font-family: 'Lato', sans-serif;
+}
+
+.first {
+    margin-top: 35vh;
+    margin-left: 25vw;
+}
+
+.first-subheading {
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-medium);
+    margin-top: 1vh;
+    margin-left: 2vw;
+}
+
+.second,
+.third {
+    margin-left: 20vw;
+    margin-top: 7vh;
+}
+
+.second-heading,
+.third-heading {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+}
+
+.second-body,
+.third-body {
+    font-size: 0.70rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.button-edit {
+    margin-left: 65vw;
+    margin-top: 5vh
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    /* margin-right: 80vw; */
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-head {
+    margin-top: 27vh;
+    margin-left: 9vw;
+}
+
+.nav-subheading {
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weight-medium);
+    margin-left: 0.3vw;
+    color: var(--greyFour);
+}
