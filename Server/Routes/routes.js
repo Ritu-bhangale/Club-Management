@@ -1,6 +1,5 @@
 import express from 'express';
-import { registerData } from '../controllers/registerController.js';
-import { loginData } from '../controllers/loginController.js';
+import { registerData,loginData } from '../controllers/authController.js';
 const router = express.Router();
 import signUpTemplateCopy from '../models/registerModels.js'
 

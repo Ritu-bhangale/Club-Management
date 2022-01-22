@@ -1,7 +1,8 @@
 import Mongoose from 'mongoose'
 
+
 const signUpTemplate = new Mongoose.Schema({
-    fullName: {
+    name: {
         type: 'String',
         required: 'true',
     },
@@ -13,10 +14,6 @@ const signUpTemplate = new Mongoose.Schema({
         type: 'String',
         required: 'true',
     },
-    date: {
-        type: 'Date',
-        default: Date.now
-    }
 })
-
-export default Mongoose.model('profile',signUpTemplate);
+var UserDetails = Mongoose.model('profile',signUpTemplate);
+export default UserDetails;
