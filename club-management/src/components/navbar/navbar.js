@@ -13,31 +13,14 @@ function Navbar() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+      <div className="vertical">
+        <div className="vertical-club-detail">
+          <img src="/Assets/logo.png" alt="" />
+          <h1>Club Name</h1>
+          <p>Name of wing</p>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link>
-            </li>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <h1>Club Name</h1>
-            <h1>Club of Wing</h1>
-            <br/>
-            <br/>
-            {SidebarData.map((item, index) => {
+        <div className="navbar-vertical">
+        {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
@@ -47,9 +30,8 @@ function Navbar() {
                 </li>
               );
             })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
+        </div>
+      </div>
     </>
   );
 }

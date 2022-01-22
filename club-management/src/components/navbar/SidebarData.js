@@ -5,26 +5,26 @@ import * as IoIcons from 'react-icons/io';
 
 export const SidebarData = [{
         title: 'Member',
-        path: '/',
-        icon: < AiIcons.AiFillHome / > ,
+        path: '/member',
+        icon: < IoIcons.IoIosPeople/> ,
         cName: 'nav-text'
     },
     {
         title: 'Calender',
         path: '/calender',
-        icon: < IoIcons.IoIosPaper / > ,
+        icon: < FaIcons.FaRegCalendarAlt/> ,
         cName: 'nav-text'
     },
     {
         title: 'Events',
         path: '/events',
-        icon: < FaIcons.FaCartPlus / > ,
+        icon: < FaIcons.FaMicrophoneAlt/> ,
         cName: 'nav-text'
     },
     {
         title: 'Profile',
         path: '/profile',
-        icon: < IoIcons.IoMdPeople / > ,
+        icon: < IoIcons.IoMdPerson /> ,
         cName: 'nav-text'
     },
 ];

@@ -1,72 +1,48 @@
-.navbar {
-    background-color: black;
-    height: 80px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+.vertical{
+    background: var(--greyGradient);
+    width: 20%;
+    height: 100vh;
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: var(--border-radius-card);
+    color: var(--greyOne);
+    text-align: center;
 }
-
-.menu-bars {
-    margin-left: 1rem;
-    font-size: 2rem;
-    background: none;
-}
-
-.nav-menu {
-    background-color: black;
-    width: 250px;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    transition: 850ms;
-}
-
-.nav-menu.active {
-    left: 0;
-    transition: 350ms;
-}
-
-.nav-text {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 8px 0px 8px 16px;
-    list-style: none;
-    height: 60px;
-}
-
-.nav-text a {
+*{
     text-decoration: none;
-    color: #f5f5f5;
-    font-size: 18px;
-    width: 95%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    border-radius: 4px;
 }
-
-.nav-text a:hover {
-    background-color: var(--purple);
+li{
+    list-style: none;
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-semibold);
+    margin-top: 2vh;
 }
-
-.nav-menu-items {
-    width: 100%;
+.navbar-vertical span{
+    color: var(--greyThree);
+    margin-left: 1vw;
 }
-
-.navbar-toggle {
-    background-color: black;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+svg{
+    color: var(--greyThree);
 }
-
-span {
-    margin-left: 16px;
+.vertical-club-detail h1{
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-semibold);
+}
+.vertical-club-detail p{
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-medium);
+    color: var(--greyTwo);
+}
+.vertical-club-detail img{
+    width: 3vw;
+    margin-top: 13vh;
+    margin-bottom: 2vh;
+}
+.navbar-vertical{
+    text-align: left;
+    margin-left: 30%;
+    margin-top: 10vh;
+}
+.navbar-vertical span:hover, .navbar-vertical span:active, .navbar-vertical svg:hover, .navbar-vertical svg:active{
+    color: var(--greyOne);
 }
