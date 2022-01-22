@@ -1,6 +1,75 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Button from "../../components/button/button";
 import "../login/login.css";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom"
+
+const Login = ({ setLoginUser }) => {
+    const navigate = useNavigate()
+    const [user, setUser] = useState({
+        name: "",
+        password: ""
+    })
+    const handleChange = e => {
+        const { name, value } = e.target
+        setUser({
+            ...user,//spread operator 
+            [name]: value
+        })
+    }
+
+    const login = () => {
+        axios.post("http://localhost:3000/Login", user)
+            .then(res => {
+                alert(res.data.message)
+                setLoginUser(res.data.user)
+                navigate("/", { replace: true })
+            })
+    }
+    return (
+        <>
+            <div className="login">
+                <div className="leftSide">
+                    <div className="leFt">
+                        <h1>Not Registered yet?</h1>
+                        <Button buttonStyle="btn-normal" onClick={navigate("/register", { replace: true })}>Register </Button>
+                    </div>
+                </div>
+                <div className="rightSide">
+                    <div className="form-part">
+                        <h1>Login</h1>
+                        <div className="form">
+                            <p>E-Mail Id:</p>
+                            <input
+                                type="text"
+                                name="email"
+                                value={user.email}
+                                onChange={handleChange}
+                                placeholder='Enter college email id' />
+                            <br />
+                            <p>Password</p>
+                            <input
+                                type="password"
+                                name="password"
+                                value={user.password}
+                                onChange={handleChange}
+                                placeholder='' />
+                            <br />
+                            <Button
+                                buttonStyle="btn-normal"
+                                type="submit"
+                                onClick={Login}>Login</Button>
+                            <div className="forgot">
+                                <Button buttonStyle="btn-line">Forgot Password?</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+export default Login
 
 // class App extends Component {
 //     constructor() {
@@ -79,37 +148,3 @@ import "../login/login.css";
 // }
 
 // export default App;
-
-const login = () => {
-    return (
-        <>
-        <div className="login">
-        <div className="leftSide">
-                <div className="leFt">
-                <h1>Not Registered yet?</h1>
-                <Button buttonStyle="btn-normal">Register</Button>
-                </div>
-        </div>
-        <div className="rightSide">
-                <div className="form-part">
-                    <h1>Login</h1>
-                    <div className="form">
-                        <p>E-Mail Id:</p>
-                        <input type="text" name="Mail" id="mail" placeholder='Enter college email id'/>
-                        <br />
-                        <p>Password</p>
-                        <input type="password" name="password" id="password" placeholder=''/>
-                        <br />
-                        <Button buttonStyle="btn-normal">Login</Button>
-                        <div className="forgot">
-                        <Button buttonStyle="btn-line">Forgot Password?</Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </>
-    );
-};
-
-export default login;

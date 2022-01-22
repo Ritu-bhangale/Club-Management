@@ -27,11 +27,11 @@ p{
     color: var(--greyOne);
     margin-bottom: 5vh;
 }
-.form{
+form{
     width: 75%;
     margin-top: 8vh;
 }
-.form Button{
+form Button{
     margin-left: 40%;
     margin-top: 4vh;
 }
@@ -45,4 +45,15 @@ p{
 }
 .right-side Button{
     margin-top: 3vh;
+}
+.left-side .form-part input[type=submit]{
+    background: var(--purpleGradient);
+    border: none;
+    color: var(--greyOne);
+    padding: 2vh 2vw;
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    margin-top: 5vh;
 }
