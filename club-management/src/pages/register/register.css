@@ -1,0 +1,48 @@
+.register{
+    display: flex;
+}
+.left-side{
+    background: var(--greyGradient);
+    width: 50%;
+    height: 100vh;
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: var(--border-radius-card);
+}
+.form-part{
+    margin-left: 15%;
+    margin-top: 15vh;
+}
+p{
+    color: var(--greyOne);
+    margin-bottom: 1vh;
+}
+.form-part input[type=text],.form-part input[type=password]{
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    padding: 1vh 2vw 1vh 0vw;
+    outline: none;
+    color: var(--greyOne);
+    margin-bottom: 5vh;
+}
+.form{
+    width: 75%;
+    margin-top: 8vh;
+}
+.form Button{
+    margin-left: 40%;
+    margin-top: 4vh;
+}
+.right-side{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.right-side Button{
+    margin-top: 3vh;
+}

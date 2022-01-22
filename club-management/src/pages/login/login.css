@@ -1,4 +1,4 @@
-.half-grey {
+/* .half-grey {
     position: fixed;
     top: 0;
     right: 0;
@@ -7,11 +7,13 @@
     background: var(--greyGradient);
     backdrop-filter: var(--backdrop-filter);
     border-radius: var(--border-radius-card);
+    color: var(--greyOne);
 }
 
 .left-side {
-    margin-top: 40vh;
-    margin-left: 20vw;
+    text-align: center;
+    margin-left: 15vw;
+    margin-top: 13vh;
 }
 
 .main {
@@ -19,30 +21,113 @@
     flex-direction: row;
 }
 
-input[type=text],
-input[type=password] {
-    width: 50%;
+.half-grey input[type=text],
+.half-grey input[type=password] {
+    width: 70%;
     box-sizing: content-box;
     border: none;
     border-bottom: 2px solid;
     background: none;
-    color: var(--shadeFive);
+    color: var(--greyOne);
+    padding: 1vh 2vw 1vh 0vw;
+    margin-bottom: 3vh;
 }
 
 input {
     outline: none;
 }
-
-label {
-    color: #5F5948;
+.main h1{
+    text-align: center;
+    font-weight: var(--font-weight-heading);
+    font-size: var(--font-size-heading);
+    word-spacing: 0.5vw;
+    letter-spacing: 0.04vw;
+    margin-top: 5vh;
+    color: var(--greyOne);
+    margin-top: 25vh;
 }
-
-.form-part {
-    width: 100%;
-    margin-left: 10vw;
+.left-side Button{
+    margin-top: 3vh;
 }
-
-
-/* Button {
-    width: 20%;
+.right-side{
+    text-align: center;
+}
+.form-part{
+    text-align: left;
+    margin-left: 18%;
+    margin-top: 10vh;
+}
+.half-grey h1{
+    margin-top: 20vh;
+    text-align: left;
+    margin-left: 18%;
+}
+.half-grey p{
+    margin-bottom: 1vh;
+}
+input[type=submit]{
+    background: none;
+    border: none;
+    color: var(--greyOne);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+}
+.form-part Button{
+    margin-top: 5vh;
+    margin-left: 30%;
 } */
+
+
+.login{
+    display: flex;
+}
+.rightSide{
+    background: var(--greyGradient);
+    width: 50%;
+    height: 100vh;
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: var(--border-radius-card);
+}
+.form-part{
+    margin-left: 15%;
+    margin-top: 15vh;
+}
+p{
+    color: var(--greyOne);
+    margin-bottom: 1vh;
+}
+.form-part input[type=text],.form-part input[type=password]{
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    padding: 1vh 2vw 1vh 0vw;
+    outline: none;
+    color: var(--greyOne);
+    margin-bottom: 5vh;
+}
+.form{
+    width: 75%;
+    margin-top: 12vh;
+}
+.form Button{
+    margin-left: 40%;
+    margin-top: 8vh;
+}
+.form .forgot button{
+    margin-top: 2vh;
+    margin-left: 35%;
+    color: var(--greyTwo);
+}
+.leftSide{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.leftSide Button{
+    margin-top: 3vh;
+}

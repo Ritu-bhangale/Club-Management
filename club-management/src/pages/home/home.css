@@ -1,5 +1,6 @@
-body{
+.home{
     background-image: url(../../../public/Assets/backgroundLanding.png);
+    height: 95vh;
 }
 
 .nav-button{
@@ -10,7 +11,7 @@ body{
 .nav-button Button{
     margin-left: 2vw;
 }
-h1{
+.hero h1{
     color: var(--greyOne);
     font-size: var(--font-size-heading);
     font-weight: var(--font-weight-heading);

@@ -4,10 +4,14 @@ body{
   background-color: black;
   font-family: 'Lato', sans-serif;
 }
+*{
+  margin: 0;
+}
 :root {
   --greyOne: #f3f3f3;
   --greyTwo: #7C7C7C;
   --greyThree: #434343;
+  --greyFour: #313131;
   --purple: #A259FF;
   --green: #0ACF83;
   --orange: #F24E1E;
@@ -15,7 +19,7 @@ body{
   --purpleGradient: linear-gradient(180deg, #A259FF 0%, rgba(162, 89, 255, 0.6) 100%);
   --greyGradient: linear-gradient(180deg, #212121 0%, rgba(33, 33, 33, 0.4) 100%);
 
-  --backdrop-filter: blur(10px);
+  --backdrop-filter: blur(20px);
   --border-radius-button: 4px;
   --border-radius-card: 10px;
 
@@ -28,4 +32,9 @@ body{
   --font-weight-semibold: 700;
   --font-weight-medium: 400;
   --font-weight-text: 300;
+}
+h1{
+  color: var(--greyOne);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-heading);
 }
