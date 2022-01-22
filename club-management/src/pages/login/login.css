@@ -77,26 +77,30 @@ input[type=submit]{
     margin-left: 30%;
 } */
 
-
-.login{
+.login {
     display: flex;
 }
-.rightSide{
+
+.rightSide {
     background: var(--greyGradient);
     width: 50%;
     height: 100vh;
     backdrop-filter: var(--backdrop-filter);
     border-radius: var(--border-radius-card);
 }
-.form-part{
+
+.form-part {
     margin-left: 15%;
     margin-top: 15vh;
 }
-p{
+
+p {
     color: var(--greyOne);
     margin-bottom: 1vh;
 }
-.form-part input[type=text],.form-part input[type=password]{
+
+.form-part input[type=text],
+.form-part input[type=password] {
     background: transparent;
     border-top: none;
     border-left: none;
@@ -107,20 +111,24 @@ p{
     color: var(--greyOne);
     margin-bottom: 5vh;
 }
-.form{
+
+.form {
     width: 75%;
     margin-top: 12vh;
 }
-.form Button{
+
+.form Button {
     margin-left: 40%;
     margin-top: 8vh;
 }
-.form .forgot button{
+
+.form .forgot button {
     margin-top: 2vh;
     margin-left: 35%;
     color: var(--greyTwo);
 }
-.leftSide{
+
+.leftSide {
     text-align: center;
     display: block;
     margin-left: auto;
@@ -128,6 +136,7 @@ p{
     margin-top: auto;
     margin-bottom: auto;
 }
-.leftSide Button{
+
+.leftSide Button {
     margin-top: 3vh;
 }

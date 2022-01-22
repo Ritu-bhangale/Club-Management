@@ -1,3 +1,15 @@
+.navbar1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: var(--greyGradient);
+    backdrop-filter: var(--backdrop-filter);
+    color: var(--greyOne);
+    background-color: var(--greyOne);
+}
+
 .first-heading,
 .second-heading,
 .third-heading {
@@ -39,13 +51,6 @@
 .button-edit {
     margin-left: 65vw;
     margin-top: 5vh
-}
-
-.navbar {
-    display: flex;
-    flex-direction: column;
-    background-color: aqua;
-    /* margin-right: 80vw; */
 }
 
 .page {

@@ -9,11 +9,11 @@ function ClubDetails() {
     return(
         <>
         <div className="page">
-        <div className="navbar">
-        <div className="nav-head">
+        <div className="navbar1">
+           <div className="nav-head">
            <p className="nav-heading">Club Name</p>
            <p className="nav-subheading">Club of Wing</p>
-        </div>
+           </div>
         </div>
         <div className="notnavbar">
         <div className="first">
