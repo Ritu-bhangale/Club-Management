@@ -16,7 +16,7 @@
     background: var(--purpleGradient);
     cursor: pointer;
     color: var(--greyOne);
-    border: none;
+    border: #A259FF solid 1px;
 }
 .react-calendar__month-view__days__day--neighboringMonth{
     visibility: hidden;

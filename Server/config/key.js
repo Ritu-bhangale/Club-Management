@@ -1,2 +1,3 @@
-const MONGOURL = "mongodb+srv://Shrishti18:<password>@club.zohnb.mongodb.net/profile?retryWrites=true&w=majority"
-export default MONGOURL
+module.exports = {
+    MONGOURL: "mongodb+srv://Shrishti18:Shrits@club.zohnb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+};
