@@ -2,29 +2,34 @@ import React, { Component, useState } from "react";
 import Button from "../../components/button/button";
 import "../login/login.css";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom"
+import { useNavigate,Link } from "react-router-dom"
 
 const Login = ({ setLoginUser }) => {
     const navigate = useNavigate()
-    const [user, setUser] = useState({
-        name: "",
-        password: ""
-    })
-    const handleChange = e => {
-        const { name, value } = e.target
-        setUser({
-            ...user,//spread operator 
-            [name]: value
-        })
-    }
 
-    const login = () => {
-        axios.post("http://localhost:3000/Login", user)
-            .then(res => {
-                alert(res.data.message)
-                setLoginUser(res.data.user)
-                navigate("/", { replace: true })
-            })
+    const [data, setData] = useState({ email: "", password: "" });
+	const [error, setError] = useState("");
+
+    const handlChange = ({ currentTarget: input }) => {
+        setData({ ...data, [input.name]: input.value });
+    };
+
+    const lgoin = async (e) => {
+        e.preventDefault();
+		try {
+			const url = "http://localhost:8080/login";
+			const { data: res } = await axios.post(url, data);
+			localStorage.setItem("token", res.data);
+			window.location = "/";
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
     }
     return (
         <>
@@ -32,33 +37,37 @@ const Login = ({ setLoginUser }) => {
                 <div className="leftSide">
                     <div className="leFt">
                         <h1>Not Registered yet?</h1>
-                        <Button buttonStyle="btn-normal" onClick={navigate("/register", { replace: true })}>Register </Button>
+                        <Link to="/register"><Button buttonStyle="btn-normal">Register</Button></Link>
                     </div>
                 </div>
                 <div className="rightSide">
                     <div className="form-part">
                         <h1>Login</h1>
                         <div className="form">
+                            <form action="#" onSubmit={lgoin}>
                             <p>E-Mail Id:</p>
                             <input
                                 type="text"
                                 name="email"
-                                value={user.email}
-                                onChange={handleChange}
+                                value={data.email}
+                                onChange={handlChange}
+                                required
                                 placeholder='Enter college email id' />
                             <br />
                             <p>Password</p>
                             <input
                                 type="password"
                                 name="password"
-                                value={user.password}
-                                onChange={handleChange}
+                                value={data.password}
+                                onChange={handlChange}
+                                required
                                 placeholder='' />
                             <br />
                             <Button
                                 buttonStyle="btn-normal"
                                 type="submit"
-                                onClick={Login}>Login</Button>
+                                onClick={lgoin}>Login</Button>
+                            </form>
                             <div className="forgot">
                                 <Button buttonStyle="btn-line">Forgot Password?</Button>
                             </div>

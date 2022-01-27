@@ -2,50 +2,37 @@ import React, { useState } from 'react';
 import Button from '../../components/button/button'
 import './register.css'
 import axios from 'axios'
+import {useNavigate, Link} from 'react-router-dom'
 
 function Register() {
-    // const [name, setName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [password, setPassword] = useState('')
-
-    // async function registerUser(event){
-    //     event.preventDefault()
-    //     const response = await fetch('http://localhost:3000/register',{
-    //         method:'POST',
-    //         headers: {
-    //             'Content-Type' : 'application.json',
-    //         },
-    //         body: JSON.stringify({
-    //             name,
-    //             email,
-    //             password,
-    //         })
-    //     })
-    //     const data = await response.json()
-    //     console.log(data)
-
-    const [user,setUser] = useState({
-        name:"",
-        email:"",
+    const [data, setData] = useState({
+        name: "",
+        email: "",
         password: ""
-    })
-    const handleChange = e =>{
-    const {name,value} = e.target
-    setUser({
-    ...user,//spread operator 
-    [name]:value
-    })
+    });
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
+
+    const handleChange = ({ currentTarget: input }) => {
+        setData({ ...data, [input.name]: input.value });
     }
-//register function 
-   const egister = ()=>{
-   const {name,email,password} = user
-   if (name && email && password){
-    axios.post("http://localhost:3000/register",user )
-    .then(res=>console.log(res))
-   }
-   else{
-       alert("invalid input")
-   };
+    //register function 
+    const egister = async (e) => {
+        e.preventDefault();
+        try {
+			const url = "http://localhost:8080/register";
+			const { data: res } = await axios.post(url, data);
+			navigate("/login");
+			console.log(res.message);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
     }
     return (
         <>
@@ -53,12 +40,12 @@ function Register() {
                 <div className="left-side">
                     <div className="form-part">
                         <h1>Register</h1>
-                        <form action='#'>
+                        <form action='#' onSubmit={egister}>
                             <p>Fullname:</p>
                             <input
                                 type="text"
-                                name="name" 
-                                value={user.name} 
+                                name="name"
+                                value={data.name}
                                 onChange={handleChange}
                                 placeholder='FullName'
                             />
@@ -66,8 +53,8 @@ function Register() {
                             <p>E-Mail Id:</p>
                             <input
                                 type="text"
-                                name="email" 
-                                value={user.email} 
+                                name="email"
+                                value={data.email}
                                 onChange={handleChange}
                                 placeholder='Enter college Email Id'
                             />
@@ -75,19 +62,19 @@ function Register() {
                             <p>Password</p>
                             <input
                                 type="password"
-                                name="password" 
-                                value={user.password} 
+                                name="password"
+                                value={data.password}
                                 onChange={handleChange}
                             />
                             <br />
-                            <input type="submit" value="Register" onClick={egister}/>
+                            <input type="submit" value="Register" onClick={egister} />
                         </form>
                     </div>
                 </div>
                 <div className="right-side">
                     <div className="right">
                         <h1>Already Registered?</h1>
-                        <Button buttonStyle="btn-normal">Login</Button>
+                        <Link to="/login"><Button buttonStyle="btn-normal">Login</Button></Link>
                     </div>
                 </div>
             </div>
