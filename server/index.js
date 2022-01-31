@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const errorMiddleware = require("./middleware/error")
 
 
 //config
@@ -15,11 +16,12 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
-
+app.use(errorMiddleware)
 //routes
 const userRoutes = require("./routes/user")
 const authRoutes = require("./routes/auth")
 const clubRoute = require('./routes/clubRoutes')
+app.use("/clubs",clubRoute)
 app.use("/clubs",clubRoute)
 app.use("/register",userRoutes)
 app.use("/login",authRoutes)

@@ -10,7 +10,7 @@ const clubSchema = new mongoose.Schema({
         required: [true, "Enter name og the wing under which your club lies"]
     },
     website: {
-        type: URL,
+        type: String,
         required: [true, "Enter your website link"]
     },
     description: {
@@ -18,7 +18,7 @@ const clubSchema = new mongoose.Schema({
         required: [true, "Write about the club in 200 characters"],
         maxlength: [200, "About us cannot exceed 200 characters"]
     },
-    images: [{
+    images: {
         public_id: {
             type: String,
             required: true,
@@ -27,7 +27,7 @@ const clubSchema = new mongoose.Schema({
             type: String,
             required: true,
         }
-    }],
+    },
     createdAt: {
         type: Date,
         default: Date.now,
