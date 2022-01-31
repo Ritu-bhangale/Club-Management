@@ -1,12 +1,13 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
+
+
+//config
 require('dotenv').config()
-const connection = require('./db')
-const userRoutes = require("./routes/user")
-const authRoutes = require("./routes/auth")
 
 //database connection 
+const connection = require('./db')
 connection()
 
 //middlewares
@@ -16,8 +17,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 //routes
+const userRoutes = require("./routes/user")
+const authRoutes = require("./routes/auth")
+const clubRoute = require('./routes/clubRoutes')
+app.use("/clubs",clubRoute)
 app.use("/register",userRoutes)
 app.use("/login",authRoutes)
+
 
 const port = process.env.port || 8080
 app.listen(port,()=>console.log(`listening on port ${port}`))
