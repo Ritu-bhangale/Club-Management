@@ -49,7 +49,7 @@ exports.getClubDetails = async(req,res,next)=>{
     const club = await Clubs.findById(req.params.id);
 
     if(!club){
-        return next(new ErrorHandler("Product not found",404))
+        return next(new ErrorHandler("Club not found",404))
     }
 
     res.status(200).json({

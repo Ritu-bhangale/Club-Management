@@ -5,9 +5,10 @@ const passwordComplexity = require("joi-password-complexity")
 const Joi = require("joi")
 
 const userSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    email: {type: String, required: true},
-    password: {type: String, required: true}
+    name: {type: String, required: [true,"Please Enter your name"]},
+    email: {type: String, required: [true,"Please Enter your E-mail Id"]},
+    password: {type: String, required: [true,"Please Enter your password"],minlength:[8,"Password shouls have more than 8 characters"]},
+    role: {type:String, default: "admin"}
 })
 
 userSchema.methods.generateAuthToken = function(){
