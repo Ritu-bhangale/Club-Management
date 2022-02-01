@@ -3,7 +3,9 @@ import Register from './pages/register/register';
 import ClubDetails from './pages/club-detail/clubDetail';
 import Calendar from './pages/Calendar/calendar'
 import Login from './pages/login/login';
-import Home from './pages/home/home'
+import Home from './pages/home/home';
+import ClubDetails_Form from './pages/club-detail/clubDetails_Form';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +23,7 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/clubdetails" element={<ClubDetails/>}/>
+        <Route path="/clubdetailsForm" element={<ClubDetails_Form/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
       </Routes>
     </Router>

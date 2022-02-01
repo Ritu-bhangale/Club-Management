@@ -1,0 +1,31 @@
+.welcome {
+    margin-left: 10vw;
+    margin-top: 15vh;
+}
+
+.form-part input[type=text] {
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    padding: 1vh 2vw 1vh 0vw;
+    outline: none;
+    color: var(--greyOne);
+    margin-bottom: 5vh;
+}
+
+.form-part {
+    padding: 1.5vh;
+}
+
+.colorpart {
+    margin-top: 2vh;
+    background: var(--greyGradient);
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: var(--border-radius-card);
+    margin-left: 20vw;
+}
