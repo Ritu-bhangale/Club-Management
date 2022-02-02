@@ -1,21 +1,14 @@
 import React from 'react';
-import Calendar from '../../components/Calendar/calendar'
-import Navbar from '../../components/navbar/navbar'
-import './calendar.css'
+import Calendar from '../../components/Calendar/calendar';
 import Button from '../../components/button/button'
-// demo just to showcase functionality
+import { Link } from 'react-router-dom'
 
 const calendar = () => {
-  return(
-      <>
-      <div className="calendar-some">
-      <Navbar/>
-      <Calendar/>
-      <div className="addEventBtn">
-      <Button buttonStyle="btn-normal">Add Event</Button>
-      </div>
-      </div>
-      </>
+  return (
+    <>
+      <Link to="/calendar/addevent"><Button buttonStyle="btn-normal">Add Event</Button></Link>    
+      <Calendar />
+    </>
   );
 };
 

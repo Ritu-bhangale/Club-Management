@@ -1,18 +1,24 @@
-import React from 'react';
-import Calendar from 'react-calendar'
-import './Calendar.css'
+import {React, useRef} from "react";
+import FullCalendar from '@fullcalendar/react' // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
+import Datetime from 'react-datetime';
+import "react-datetime/css/react-datetime.css";
+import Addevent from '../addEvent'
 
-const calendar = () => {
-  return (
-      <>
-      <div className="calendar-parent">
-      <div className="calendar-in">
-      <Calendar calendarType="ISO 8601" 
-                showNeighboringMonth="false"/>
-      </div>
-      </div>
-      </>
-  );
-};
+export default function () {
+    const calendarRef = useRef(null)
 
-export default calendar;    
+    const onEventAdded = (event)=>{
+        let calendarApi = this.calendarRef.current.getApi()
+        calendarApi.addEvent()
+    }
+    return (
+        <>
+            <FullCalendar
+                ref={calendarRef}
+                plugins={[dayGridPlugin]}
+                initialView="dayGridMonth"
+            />
+        </>
+    )
+}
