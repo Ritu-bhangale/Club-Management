@@ -4,7 +4,7 @@ import ClubDetails from './pages/club-detail/clubDetail';
 import Calendar from './pages/Calendar/calendar'
 import Login from './pages/login/login';
 import Home from './pages/home/home';
-import ClubDetail_form from './pages/clubDetail_Form';
+import ClubDetail_form from './pages/clubDetail_Form/clubDetail_form';
 import {
   BrowserRouter as Router,
   Switch,
