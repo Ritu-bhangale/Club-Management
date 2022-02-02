@@ -21,7 +21,7 @@ export class clubDetail_form extends Component {
       }
     
       componentDidMount() {
-        axios.get('http://localhost:8080/login/')
+        axios.get('http://localhost:8080/register/find')
           .then(response => {
             if (response.data.length > 0) {
               this.setState({
