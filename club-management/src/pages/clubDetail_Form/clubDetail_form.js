@@ -72,7 +72,7 @@ export class clubDetail_form extends Component {
     
         console.log(clubb);
     
-        axios.post('http://localhost:3000/club/new', clubb)
+        axios.post('http://localhost:8080/clubs/new', clubb)
           .then(res => console.log(res.data));
     
         window.location = '/clubdetails';
