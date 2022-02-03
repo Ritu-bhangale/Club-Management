@@ -21,10 +21,10 @@ app.use(errorMiddleware)
     //routes
 const userRoutes = require("./routes/user")
 const authRoutes = require("./routes/auth")
-const clubRoute = require('./routes/clubRoutes')
+    // const clubRoute = require('./routes/clubRoutes')
 const eventRoute = require('./routes/calendarRoutes')
 const clubDescriptionRouter = require('./routes/clubUpdate');
-app.use("/clubs", clubRoute)
+// app.use("/clubs", clubRoute)
 app.use("/register", userRoutes)
 app.use("/login", authRoutes)
 app.use("/event", eventRoute)

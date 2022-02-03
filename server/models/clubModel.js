@@ -7,15 +7,15 @@ const clubSchema = new mongoose.Schema({
     },
     wingname: {
         type: String,
-        required: [true, "Enter name og the wing under which your club lies"]
+        required: true
     },
     website: {
         type: String,
-        required: [true, "Enter your website link"]
+        required: true
     },
     description: {
         type: String,
-        required: [true, "Write about the club in 200 characters"],
+        required: true,
         maxlength: [200, "About us cannot exceed 200 characters"]
     },
     images: {
