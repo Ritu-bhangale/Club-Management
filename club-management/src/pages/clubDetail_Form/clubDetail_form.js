@@ -1,137 +1,84 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { Component, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/button/button";
+import "./clubDetail_form.css";
 
-export class clubDetail_form extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.onChangename = this.onChangename.bind(this);
-        this.onChangeWingname = this.onChangeWingname.bind(this);
-        this.onChangewebsite = this.onChangewebsite.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-    
-        this.state = {
-          name: '',
-          wingname: '',
-          website: '',
-          description: '',
-          users: []
-        }
-      }
-    
-      componentDidMount() {
-        axios.get('http://localhost:8080/register/find')
-          .then(response => {
-            if (response.data.length > 0) {
-              this.setState({
-                users: response.data.map(e => e.name),
-                name: response.data[0].name
-              })
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-    
-      }
-    
-      onChangename(e) {
-        this.setState({
-          name: e.target.value
-        })
-      }
-    
-      onChangeWingname(e) {
-        this.setState({
-          wingname: e.target.value
-        })
-      }
-    
-      onChangewebsite(e) {
-        this.setState({
-          website: e.target.value
-        })
-      }
-    
-      onChangeDescription(e) {
-        this.setState({
-        description: e.target.value
-        })
-      }
-    
-      onSubmit(e) {
-        e.preventDefault();
-    
-        const clubb = {
-          name: this.state.name,
-          wingname: this.state.wingname,
-          website: this.state.website,
-          description: this.state.description
-        }
-    
-        console.log(clubb);
-    
-        axios.post('http://localhost:8080/clubs/new', clubb)
-          .then(res => console.log(res.data));
-    
-        window.location = '/clubdetails';
-      }
+function ClubDetail_form()  {
 
-  render() {
-    return(
-        <>
-        <h1 className='welcome'>Welcome!</h1>
+  const [data, setData] = useState({ name:"",wingname:"",website:"",description:"" });
+const [error, setError] = useState("");
+const navigate = useNavigate();
+
+  const handlChange = ({ currentTarget: input }) => {
+      setData({ ...data, [input.name]: input.value });
+  };
+
+  const clubb = async (e) => {
+      e.preventDefault();
+  try {
+    const url = "http://localhost:8080/clubs";
+    const { data: res } = await axios.post(url, data);
+    localStorage.setItem("token", res.data);
+    navigate("/clubdetails");
+
+  } catch (error) {
+    if (
+      error.response &&
+      error.response.status >= 400 &&
+      error.response.status <= 500
+    ) {
+      setError(error.response.data.message);
+    }
+  }
+  }
+  return (
+      <>
+          <h1 className='welcome'>Welcome!</h1>
         <div className='colorpart'>
         <div className="form-part">
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={clubb}>
                 <p>Club name:</p>
-                <select ref="userInput"
+                <input
+                    type="text"
                     required
-                    className="form-control"
-                    value={this.state.name}
-                    onChange={this.onChangename}>
-                    {
-                        this.state.users.map(function(user) {
-                        return <option 
-                            key={user}
-                            value={user}>{user}
-                            </option>;
-                        })
-                    }
-                 </select>
+                    name="name"
+                    value={data.name}
+                    onChange={handlChange}
+                />
                 <p>Name of Wing:</p>
                 <input
                     type="text"
                     required
                     name="wingname"
-                    value={this.state.wingname}
-                    onChange={this.onChangeWingname}
+                    value={data.wingname}
+                    onChange={handlChange}
                 />
                 <p>Website Link:</p>
                 <input
                     type="text"
                     name="website"
-                    value={this.state.website}
-                    onChange={this.onChangewebsite}
+                    value={data.website}
+                    onChange={handlChange}
                 />
                 <p>About the club:</p>
                 <input
                     type="text"
                     name="description"
-                    value={this.state.description}
-                    onChange={this.onChangeDescription}
+                    value={data.description}
+                    onChange={handlChange}
                 />
-                <input type="submit" value="club" />
+                <Button
+                   buttonStyle="btn-normal"
+                   type="submit"
+                   onClick={clubb}>Submit</Button>
             </form>
             
         </div>
         </div>
-    
-        </>
-      );
-  }
+      </>
+  );
 }
 
-export default clubDetail_form;
+export default ClubDetail_form;
 
