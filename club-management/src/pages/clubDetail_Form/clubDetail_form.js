@@ -17,7 +17,7 @@ const navigate = useNavigate();
   const clubb = async (e) => {
       e.preventDefault();
   try {
-    const url = "http://localhost:8080/clubs";
+    const url = "http://localhost:8080/clubDescription/add";
     const { data: res } = await axios.post(url, data);
     localStorage.setItem("token", res.data);
     navigate("/clubdetails");
