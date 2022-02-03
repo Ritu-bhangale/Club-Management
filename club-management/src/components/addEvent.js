@@ -10,7 +10,6 @@ function EventAdd(onEventAdded) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-
         onEventAdded({
             title,
             start,
