@@ -2,7 +2,7 @@ const Clubs = require("../models/clubModel");
 const ErrorHandler = require("../utils/errorHandler");
 
 
-const updateUserProfile = asyncHandler(async(req, res) => {
+const updateUserProfile = async(req, res) => {
     const user = await User.findById(req.user._id);
 
     if (user) {
@@ -27,7 +27,7 @@ const updateUserProfile = asyncHandler(async(req, res) => {
         res.status(404);
         throw new Error("User Not Found");
     }
-});
+};
 //create club -- admin
 exports.createClub = async(req, res, next) => {
     const club = await Clubs.create(req.body);

@@ -5,7 +5,8 @@ import Calendar from './pages/Calendar/calendar'
 import Login from './pages/login/login';
 import Home from './pages/home/home';
 import ClubDetail_form from './pages/clubDetail_Form/clubDetail_form';
-import AddEvent from './components/addEvent';
+import Modal from 'react-modal'
+
 
 import {
   BrowserRouter as Router,
@@ -14,7 +15,7 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
-
+Modal.setAppElement('#root');
 function App() {
   return (
     <>
@@ -25,7 +26,6 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/clubdetails" element={<ClubDetails/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
-        <Route path='/calendar/addevent' element={<AddEvent/>}/>
         <Route path="/clubForm" element={<ClubDetail_form/>}/>
       </Routes>
     </Router>

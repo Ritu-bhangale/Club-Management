@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 
 const calendar = () => {
   return (
-    <>
-      <Link to="/calendar/addevent"><Button buttonStyle="btn-normal">Add Event</Button></Link>    
+    <>    
       <Calendar />
     </>
   );

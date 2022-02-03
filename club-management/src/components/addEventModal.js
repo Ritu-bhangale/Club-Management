@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import Datetime from "react-datetime";
-import Button from './button/button'
-import { Link } from 'react-router-dom'
+import Modal from "react-modal";
+import Datetime from 'react-datetime'
+import { Link } from "react-router-dom";
+import Button from "./button/button";
 
-function EventAdd(onEventAdded) {
-    const [title, setTitle] = useState({ title: "" })
-    const [start, setStart] = useState(new Date())
-    const [end, setEnd] = useState(new Date())
+export default function({isOpen, onClose, onEventAdded}){
+    const [title,setTitle] = useState("");
+    const [start,setStart] = useState(new Date());
+    const [end,setEnd] = useState(new Date());
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
+    const onSubmit = (event) =>{
+        event.preventDefault();
+
         onEventAdded({
             title,
             start,
             end
         })
+        onClose();
     }
-    
-    return (
+    return(
+        <>
+        <Modal isOpen={isOpen} onRequestClose={onClose}>
         <div className="formEventAdd">
             <h1>Add Events</h1>
             <form action="#" onSubmit={onSubmit}>
@@ -39,10 +43,10 @@ function EventAdd(onEventAdded) {
                     value={end}
                     onChange={date => setEnd(date)}
                 />
-                    <Link to="/calendar"><Button buttonStyle="btn-normal">Add Event</Button></Link>
+                <Button buttonStyle="btn-normal">Add Event</Button>
             </form>
         </div>
+        </Modal>
+        </>
     )
 }
-
-export default EventAdd
