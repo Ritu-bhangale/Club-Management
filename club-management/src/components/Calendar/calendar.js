@@ -4,6 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
 import Addevent from '../addEvent'
+import Modal from 'react-modal'
+
 
 export default function () {
     const calendarRef = useRef(null)
@@ -18,6 +20,7 @@ export default function () {
                 ref={calendarRef}
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
+                eventContent={Addevent}
             />
         </>
     )
