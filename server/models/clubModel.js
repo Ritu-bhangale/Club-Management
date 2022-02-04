@@ -33,5 +33,5 @@ const clubSchema = new mongoose.Schema({
         default: Date.now,
     }
 })
-
-module.exports = mongoose.model("Clubs", clubSchema)
+const ClubForm = new mongoose.model("Clubs", clubSchema)
+export default ClubForm;
