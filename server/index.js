@@ -23,10 +23,12 @@ const userRoutes = require("./routes/user")
 const authRoutes = require("./routes/auth")
 const clubRoute = require('./routes/clubRoutes')
 const eventRoute = require('./routes/calendarRoutes')
+const whatsappRoute = require("./routes/whatsappRoute")
 app.use("/clubs", clubRoute)
 app.use("/register", userRoutes)
 app.use("/login", authRoutes)
 app.use("/event", eventRoute)
+app.use("/whatsapp", whatsappRoute)
 
 
 const port = process.env.port || 8080

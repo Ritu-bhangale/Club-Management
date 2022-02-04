@@ -5,6 +5,8 @@ import Calendar from './pages/Calendar/calendar'
 import Login from './pages/login/login';
 import Home from './pages/home/home';
 import ClubDetail_form from './pages/clubDetail_Form/clubDetail_form';
+import Whatsapp from './pages/whatsapp/whatsapp';
+
 import Modal from 'react-modal'
 
 
@@ -27,6 +29,7 @@ function App() {
         <Route path="/clubdetails" element={<ClubDetails/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
         <Route path="/clubForm" element={<ClubDetail_form/>}/>
+        <Route path="/whatsapp" element={<Whatsapp/>}/>
 
       </Routes>
     </Router>
