@@ -8,6 +8,7 @@ function ClubDetail_form() {
 
   const [data, setData] = useState({ name: "", wingname: "", website: "", description: "", logo: "" });
   const [error, setError] = useState("");
+  const[logo,setLogo]=useState("")
   const navigate = useNavigate();
 
   const handlChange = ({ currentTarget: input }) => {
@@ -76,9 +77,11 @@ function ClubDetail_form() {
             <p>Logo of the Club:</p>
             <input
               type="file"
+              id='file'
               name="logo"
               accept=".png, .jpg, .jpeg"
               value={data.logo}
+              // onChange={(e) => setLogo(e.target.files[0])}
               onChange={handlePhoto}
             />
             <Button

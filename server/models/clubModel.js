@@ -18,9 +18,9 @@ const clubSchema = new mongoose.Schema({
         required: true,
         maxlength: [1000, "About us cannot exceed 200 characters"]
     },
-    photo: {
+    logo: {
         type: String,
-        required: [true,"Insert your logo file"]
+        required: true
     },
     createdAt: {
         type: Date,

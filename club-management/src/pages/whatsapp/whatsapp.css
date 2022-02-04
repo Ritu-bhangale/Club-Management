@@ -37,7 +37,7 @@
 .homepage_header>.button {
     background: var(--purple);
     border: 1px solid var(--purple);
-    color: #fff;
+    color: var(----greyTwo);
     font-size: 1.25rem;
     width: 100%;
     text-align: center;
