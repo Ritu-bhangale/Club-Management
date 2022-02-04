@@ -1,0 +1,46 @@
+.clubCardComp{
+    background: var(--greyGradient);
+    margin-top: 10vh;
+    margin-left: 5%;
+    padding: 8vh 4vw;
+    padding-left: 0.1vw;
+    border-radius: var(--border-radius-card);
+    width: 35%;
+    display: flex;
+}
+.clubCardComp img{
+    display: block;
+    margin-top: 70%;
+    margin-right: 2vw;
+    width: 50px !important;
+}
+.rightTopCard{
+    display: flex;
+}
+.clubCardComp h1{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--greyOne);
+    margin-top: 2vh;
+}
+.clubCardComp p{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--greyTwo);
+    margin-top: 1.2vh;
+}
+.clubCardComp a {
+    margin-left: 50%;
+    color: var(--orange);
+    margin-top: 2vh;
+    font-size: var(--font-size-text);
+}
+.clubCardComp a span{
+    border-bottom: 1vh;
+    padding: 0.2vh;
+    border-bottom: 1px var(--orange) solid;
+}
+.lineClubCard{
+    border-left: var(--orange) 0.2vw solid;
+    margin-right: 8%;
+}

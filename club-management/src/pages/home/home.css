@@ -27,3 +27,9 @@
     margin-right: 50%;
     margin-top: 35vh;
 }
+.clubHome{
+    display: flex;
+    width: 95w;
+    flex-wrap: wrap;
+    margin-left: 3vw;
+}

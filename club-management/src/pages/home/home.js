@@ -5,6 +5,14 @@ import './home.css'
 import { Link } from 'react-router-dom'
 import ClubCard from '../../components/clubCard/clubCard';
 
+const club={
+    name: "ACE - Ecell",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit blanditiis, doloribus eaque nulla id, praesentium cumque repellendus eligendi, explicabo aliquam reprehenderit quis natus ratione vitae minima debitis ipsum ex.",
+    link: "https://esummit.vercel.app/",
+    logo: {url: "https://www.linkpicture.com/q/d2c-icon-800x800.jpg"},
+    _id:"ace"
+}
+
 const home = () => {
     return (
         <>

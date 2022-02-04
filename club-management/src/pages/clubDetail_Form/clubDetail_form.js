@@ -6,7 +6,7 @@ import "./clubDetail_form.css";
 
 function ClubDetail_form()  {
 
-  const [data, setData] = useState({ name:"",wingname:"",website:"",description:"" });
+  const [data, setData] = useState({ name:"",wingname:"",website:"",description:"",images:""});
 const [error, setError] = useState("");
 const navigate = useNavigate();
 
@@ -66,6 +66,13 @@ const navigate = useNavigate();
                     type="text"
                     name="description"
                     value={data.description}
+                    onChange={handlChange}
+                />
+                <p>Logo of the Club:</p>
+                <input
+                    type="file"
+                    name="logo"
+                    value={data.images}
                     onChange={handlChange}
                 />
                 <Button

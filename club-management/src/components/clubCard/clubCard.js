@@ -1,12 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './clubCard.css'
 
-const clubCard = () => {
-  return (
-      <>
-
-      </>
-  );
+const ClubCard = ({ club }) => {
+    return (
+        <>
+            <div className="clubCardComp">
+                <div className="lineClubCard">
+                    
+                </div>
+                <div className="leftLogoCardComp">
+                    <img src={club.logo.url} alt="" className="imgCardHome" />
+                </div>
+                <div className="rightLogoCardComp">
+                    <div className="rightTopCard">
+                    <h1 className="h1CardHome">{club.name}</h1>
+                    <a href={club.link} className="vdCardHome" target="_blank"><span>View Details</span></a>
+                    </div>
+                    <p className="paraCardHome">{club.description}</p>
+                </div>
+            </div>
+        </>
+    );
 };
 
-export default clubCard;
+export default ClubCard;

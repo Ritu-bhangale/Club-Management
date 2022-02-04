@@ -34,4 +34,4 @@ const clubSchema = new mongoose.Schema({
     }
 })
 const ClubForm = new mongoose.model("Clubs", clubSchema)
-export default ClubForm;
+module.exports = ClubForm
