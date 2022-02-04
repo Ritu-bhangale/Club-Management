@@ -7,10 +7,9 @@ const ClubCard = ({ club }) => {
         <>
             <div className="clubCardComp">
                 <div className="lineClubCard">
-                    
                 </div>
                 <div className="leftLogoCardComp">
-                    <img src={club.logo.url} alt="" className="imgCardHome" />
+                    <img src={club.logo} alt="" className="imgCardHome" />
                 </div>
                 <div className="rightLogoCardComp">
                     <div className="rightTopCard">
