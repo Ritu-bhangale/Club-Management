@@ -1,0 +1,37 @@
+.body_page .first{
+    text-align: center;
+    margin-bottom: 5vh;
+}
+.first h1{
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-semibold);
+    color: var(--greyOne);
+}
+.first p{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--greyTwo);
+}
+.second h1,.third h1{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--greyOne);
+    margin-bottom: 1vh;
+}
+.second p, .third p{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--greyTwo);
+    margin-bottom: 5vh;
+}
+.body_page img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+}
+.body_page{
+    width: 60vw;
+    margin-top: 10vh;
+    margin-left: 12vw;
+}

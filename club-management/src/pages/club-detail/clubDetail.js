@@ -2,47 +2,28 @@ import React, { useEffect, useState } from "react";
 import Button from '../../components/button/button'
 import '../club-detail/clubDetails.css'
 import Navbar from '../../components/navbar/navbar'
+import ClubDetail from "../../components/clubDetail/clubDetail";
 import axios from "axios";
+import { readClubs } from "../../functions";
 
 function ClubDetails() {
-    // const[clubs,setClub]=useState([]);
-    // const[loading,setLoading]=useState(false);
-    // const[error,setError]=useState(false);
-
-    // useEffect(()=>{
-    //     const fetchData=async()=>{
-    //         try{
-    //             setLoading(true);
-    //             const {data}=await axios.get('');
-    //             setClub(data);
-    //         }catch(err){
-    //             setError(err.message);
-    //             setLoading(false);
-    //         }
-    //     };
-    //     fetchData();
-    // },[]);
+    const [clubs, setClubs] = useState([]);
+    useEffect(()=>{
+        const fetchData = async()=>{
+            const result = await readClubs();
+            console.log(result)
+            setClubs(result.clubs)
+        }
+        fetchData()
+    }, [])
     return(
         <>
-        <div className="mainpage">
-            <Navbar/>
-            <div className="body_page">
-            <img src="/Assets/logo.png" className="image" alt="" />
-                <div className="first">
-                    <h1 className="first-heading">Club Name</h1>
-                    <p className="first_sub">Club of Wing</p>
-                </div>
-                <div className="second">
-                <p className="second-heading">Description</p>
-                <p className="second-body">Description of club. adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</p>
-                </div>
-                <div className="third">
-                    <p className="third-heading">Website</p>
-                    <p className="third-body">https://clubname.iiitn.ac.in</p>
-                </div>
-                <div className="button-edit">
-                <Button  buttonStyle="btn-normal">Edit</Button>
-                </div>
+        <div className="clubDetailsFront">
+        <Navbar/>
+        <div className="clubDetailHome">
+            {clubs.map(club=>
+                <ClubDetail key={club.name} club={club}/>
+            )}
             </div>
         </div>
         </>

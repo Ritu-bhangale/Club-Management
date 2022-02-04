@@ -12,6 +12,8 @@ const eventSchema = new mongoose.Schema({
     title: {
         type: String,
         required: [true, "Enter title of the event"]
-    },
-})
+    }
+},
+    { timestamps:true},
+)
 module.exports = mongoose.model("event", eventSchema)

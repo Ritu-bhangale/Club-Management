@@ -1,4 +1,4 @@
-const { getAllClubs, createClub, updateClub, getClubDetails } = require("../controllers/clubController");
+const { getAllClubs, createClub, updateClub, getClubDetails, deleteClub } = require("../controllers/clubController");
 const express = require("express")
 const router = express.Router();
 const multer = require('multer')
@@ -17,5 +17,6 @@ const upload = multer({ storage: storage })
 router.route("/").get(getAllClubs);
 router.route("/new", upload.single("logoImage")).post(createClub)
 router.route("/:id").put(updateClub).get(getClubDetails)
+router.route("/:id").delete(deleteClub)
 
 module.exports = router;

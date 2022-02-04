@@ -14,6 +14,12 @@ const signUpTemplate = new Mongoose.Schema({
         type: 'String',
         required: 'true',
     },
-})
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
+},
+{timestamps: true}
+)
 var UserDetails = Mongoose.model('profile',signUpTemplate);
 export default UserDetails;

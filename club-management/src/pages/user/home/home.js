@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Button from '../../components/button/button';
-import Login from '../login/login';
+import Button from '../../../components/button/button';
+import Login from '../../login/login';
 import './home.css'
 import { Link } from 'react-router-dom'
-import ClubCard from '../../components/clubCard/clubCard';
+import ClubCard from '../../../components/clubCard/clubCard';
 import axios from 'axios';
-import { readClubs } from '../../functions';
+import { readClubs } from '../../../functions';
 
 const Home = () => {
     const [clubs, setClubs] = useState([]);
@@ -20,10 +20,6 @@ const Home = () => {
     return (
         <>
             <div className="home">
-                <div className="nav-button">
-                    <Link to="/login"><Button buttonStyle="btn-normal">Login</Button></Link>
-                    <Link to="/register"><Button buttonStyle="btn-border">Register</Button></Link>
-                </div>
                 <div className="hero">
                     <h1>Explore all clubs of IIIT Nagpur</h1>
                 </div>

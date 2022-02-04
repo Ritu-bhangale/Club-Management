@@ -25,6 +25,10 @@ const clubSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+    },
+    isAdmin:{
+        type: Boolean,
+        default: false,
     }
 })
 const ClubForm = new mongoose.model("Clubs", clubSchema)
