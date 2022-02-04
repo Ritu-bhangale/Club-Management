@@ -16,7 +16,7 @@ const clubSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true,
-        maxlength: [200, "About us cannot exceed 200 characters"]
+        maxlength: [1000, "About us cannot exceed 200 characters"]
     },
     images: {
         public_id: {

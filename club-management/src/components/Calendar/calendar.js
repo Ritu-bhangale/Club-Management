@@ -12,24 +12,21 @@ import axios, { Axios } from 'axios'
 import moment from 'react-moment'
 
 
-function CalendarComp() {
+export default function CalendarA() {
     const [modalOpen, setModalOpen] = useState(false)
     const [events,setEvents] = useState("")
     const calendarRef = useRef(null)
 
     const onEventAdded = ({event})=>{
         let calendarApi = calendarRef.current.getApi()
-        calendarApi.addEvent({
-            start: moment(event.start).toDate(),
-            end: moment(event.end).toDate(),
-            title: event.title
-        });
+        calendarApi.addEvent({event});
     };
-    const handleEventAdd = async ({data})=>{
-        await Axios.post("/calendar/create", data.event)
+    async function handleEventAdd(data){
+        await axios.post("http://localhost:8080/event/create", data.event)
     }
     async function handleDateSet({data}){
-        const response = await Axios.get("/calendar/?start="+moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
+        const response = await axios.get("http://localhost:8080/event/?start="+moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
+        // const response = await axios.get("http://localhost:8080/event/");
         setEvents(response.data);
     }
     return (
@@ -38,15 +35,13 @@ function CalendarComp() {
             <div className="calendarDiv">
             <FullCalendar
                 ref={calendarRef}
-                events ={events}
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
-                eventAdd={(event)=>new handleEventAdd(event)}
-                datesSet={(date)=>new handleDateSet(date)}
+                eventAdd={event=> handleEventAdd(event)}
+                datesSet={date=> handleDateSet(date)}
             />
             </div>
             <AddEventModal isOpen={modalOpen} onClose={()=> setModalOpen(false)} onEventAdded={event => onEventAdded(event)}/>
         </>
     )
 }
-export default CalendarComp

@@ -3,6 +3,7 @@ import Button from '../../components/button/button';
 import Login from '../login/login';
 import './home.css'
 import { Link } from 'react-router-dom'
+import ClubCard from '../../components/clubCard/clubCard';
 
 const home = () => {
     return (
@@ -16,6 +17,13 @@ const home = () => {
             <h1>Explore all clubs of IIIT Nagpur</h1>
         </div>
         <div className="line"></div>
+        </div>
+        <div className="clubCardsBelow">
+            <div className="clubContainer" id="clubContainer">
+                <div className="clubHome">
+                    <ClubCard club={club}/>
+                </div>
+            </div>
         </div>
         </>
     );
