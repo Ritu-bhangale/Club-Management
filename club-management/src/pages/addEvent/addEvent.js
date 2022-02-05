@@ -4,19 +4,23 @@ import Datetime from 'react-datetime'
 import Button from "../../components/button/button";
 import DateTimePicker from "react-datetime-picker"
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AddEvent = () => {
   const [title,setTitle] = useState("");
+  const [eventby,setEventby] = useState("");
   const [start,setStart] = useState(new Date());
   const [end,setEnd] = useState(new Date());
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const onSubmit = async(event) =>{
     event.preventDefault();
     try {
       const url = "http://localhost:8080/event/create";
-      const { data: res } = await axios.post(url, data);
-      navigate("/clubdetails");
+      await axios.post(url,{title,start,end,eventby});
+      prompt(`Event Was Added, Eventname was ${title}`)
+      navigate("/clubs/");
 
     } catch (error) {
       if (
@@ -41,6 +45,14 @@ const AddEvent = () => {
                     name="title"
                     value={title}
                     onChange={e => setTitle(e.target.value)}
+                    placeholder="Title of Event"
+                />
+                <p>Event is Arranged By:</p>
+                <input
+                    type="text"
+                    name="eventby"
+                    value={eventby}
+                    onChange={e => setEventby(e.target.value)}
                     placeholder="Title of Event"
                 />
                 <p>Choose Start Date of Event:</p>

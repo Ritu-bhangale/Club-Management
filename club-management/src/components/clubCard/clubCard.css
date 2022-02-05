@@ -42,5 +42,12 @@
 }
 .lineClubCard{
     border-left: var(--orange) 0.2vw solid;
-    margin-right: 8%;
+    margin-right: 1%;
+}
+
+.wingname h1{
+    font-size: var(--font-size-medium);
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    color: var(--greyThree);
 }

@@ -5,6 +5,7 @@ import ClubHome from './pages/clubs/home/home'
 import Login from './pages/clubs/login/login';
 import Register from './pages/clubs/register/register';
 import ClubDetails from './pages/clubs/club-detail/clubDetail';
+import AddEvent from './pages/addEvent/addEvent'
 
 import {
   BrowserRouter as Router,
@@ -24,6 +25,7 @@ function App() {
         <Route path="/clubs/login" element={<Login/>}/>
         <Route path="/clubs/register" element={<Register/>}/>
         <Route path="/clubs/details" element={<ClubDetails/>}/>
+        <Route path="/clubs/addevent" element={<AddEvent/>}/>
       </Routes>
     </Router>
     </>

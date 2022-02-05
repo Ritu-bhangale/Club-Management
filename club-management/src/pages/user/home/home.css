@@ -33,3 +33,7 @@
     flex-wrap: wrap;
     margin-left: 3vw;
 }
+.eventCardsHead h1, .clubCardsHead h1{
+    text-align: center;
+    margin-top: 15vh;
+}
