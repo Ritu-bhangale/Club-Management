@@ -76,14 +76,13 @@ exports.getAllClubs = async(req, res) => {
 //get club details
 exports.getClubDetails = async(req, res, next) => {
 
-    const club = await Clubs.findById(req.params.id);
+    const club = await Clubs.findById(req.body._id);
 
     if (!club) {
         return next(new ErrorHandler("Club not found", 404))
     }
-        const {password,createdAt, ...other} =club._doc
         res.status(200).json({
             success: true,
-            other
+            club
         })
 }

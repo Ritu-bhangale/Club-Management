@@ -23,7 +23,7 @@ function App() {
         <Route path="/clubs/" element={<ClubHome/>}/>
         <Route path="/clubs/login" element={<Login/>}/>
         <Route path="/clubs/register" element={<Register/>}/>
-        <Route path="/clubs/:id" element={<ClubDetails/>}/>
+        <Route path="/clubs/details" element={<ClubDetails/>}/>
       </Routes>
     </Router>
     </>

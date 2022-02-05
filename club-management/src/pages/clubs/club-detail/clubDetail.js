@@ -12,17 +12,18 @@ function ClubDetails() {
         const fetchData = async()=>{
             const result = await readClubs();
             console.log(result)
-            setClubs(result.clubs)
+            console.log(clubs)
+            setClubs(result)
+            console.log(result.clubs)
         }
         fetchData()
     }, [])
     return(
         <>
         <div className="clubDetailsFront">
-        <Navbar/>
         <div className="clubDetailHome">
             {clubs.map(club=>
-                <ClubDetail key={club.name} club={club}/>
+                <ClubDetail key={club._id} club={club}/>
             )}
             </div>
         </div>

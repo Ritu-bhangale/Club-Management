@@ -13,8 +13,20 @@ const AddEvent = () => {
 
   const onSubmit = async(event) =>{
     event.preventDefault();
-    console.log(event)
-    navigate("/");
+    try {
+      const url = "http://localhost:8080/event/create";
+      const { data: res } = await axios.post(url, data);
+      navigate("/clubdetails");
+
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
 }
   return (
       <>
