@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
-import Button from "../../components/button/button";
-import "../login/login.css";
+import Button from "../../../components/button/button";
+import "./login.css";
 import axios from 'axios';
 import { useNavigate,Link } from "react-router-dom"
 
@@ -20,7 +20,7 @@ const Login = ({ setLoginUser }) => {
 			const url = "http://localhost:8080/login";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/";
+			window.location = "/clubs";
 		} catch (error) {
 			if (
 				error.response &&
@@ -37,7 +37,7 @@ const Login = ({ setLoginUser }) => {
                 <div className="leftSide">
                     <div className="leFt">
                         <h1>Not Registered yet?</h1>
-                        <Link to="/register"><Button buttonStyle="btn-normal">Register</Button></Link>
+                        <Link to="/clubs/register"><Button buttonStyle="btn-normal">Register</Button></Link>
                     </div>
                 </div>
                 <div className="rightSide">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../../../components/button/button';
-import Login from '../../login/login';
+import Login from '../login/login';
 import './home.css'
 import { Link } from 'react-router-dom'
 import ClubCard from '../../../components/clubCard/clubCard';
@@ -21,8 +21,8 @@ const Home = () => {
         <>
             <div className="home">
                 <div className="nav-button">
-                    <Link to="/login"><Button buttonStyle="btn-normal">Login</Button></Link>
-                    <Link to="/register"><Button buttonStyle="btn-border">Register</Button></Link>
+                    <Link to="/clubs/login"><Button buttonStyle="btn-normal">Login</Button></Link>
+                    <Link to="/clubs/register"><Button buttonStyle="btn-border">Register</Button></Link>
                 </div>
                 <div className="hero">
                     <h1>Explore all clubs of IIIT Nagpur</h1>

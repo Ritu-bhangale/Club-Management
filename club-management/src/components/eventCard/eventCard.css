@@ -1,0 +1,27 @@
+.eventCardComp{
+    background: var(--greyGradient);
+    margin-top: 10vh;
+    margin-left: 5%;
+    padding: 8vh 4vw;
+    padding-left: 0.1vw;
+    border-radius: var(--border-radius-card);
+    width: 35%;
+    display: flex;
+}
+.eventCardComp h1{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 2vh;
+}
+.lineCardEvent{
+    border-left: var(--orange) 0.2vw solid;
+    margin-right: 20%;
+}
+.startDate p, .endDate p{
+    font-size: var(--font-size-medium);
+    color: var(--greyTwo);
+    margin: 0.3vh;
+}
+.startDate p span, .endDate p span{
+    color: var(--orange);
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from 'react-datetime'
 import { Link } from "react-router-dom";
-import Button from "./button/button";
+import Button from "../button/button";
 
 export default function({isOpen, onClose, onEventAdded}){
     const [title,setTitle] = useState("");

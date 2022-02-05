@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Button from '../../components/button/button'
-import '../club-detail/clubDetails.css'
-import Navbar from '../../components/navbar/navbar'
-import ClubDetail from "../../components/clubDetail/clubDetail";
+import Button from '../../../components/button/button'
+import './clubDetails.css'
+import Navbar from '../../../components/navbar/navbar'
+import ClubDetail from "../../../components/clubDetail/clubDetail";
 import axios from "axios";
-import { readClubs } from "../../functions";
+import { readClubs } from "../../../functions";
 
 function ClubDetails() {
     const [clubs, setClubs] = useState([]);

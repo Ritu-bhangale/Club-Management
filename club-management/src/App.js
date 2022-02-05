@@ -2,6 +2,9 @@ import './App.css';
 import Modal from 'react-modal'
 import UserHome from './pages/user/home/home'
 import ClubHome from './pages/clubs/home/home'
+import Login from './pages/clubs/login/login';
+import Register from './pages/clubs/register/register';
+import ClubDetails from './pages/clubs/club-detail/clubDetail';
 
 import {
   BrowserRouter as Router,
@@ -18,6 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<UserHome/>}/>
         <Route path="/clubs/" element={<ClubHome/>}/>
+        <Route path="/clubs/login" element={<Login/>}/>
+        <Route path="/clubs/register" element={<Register/>}/>
+        <Route path="/clubs/:id" element={<ClubDetails/>}/>
       </Routes>
     </Router>
     </>

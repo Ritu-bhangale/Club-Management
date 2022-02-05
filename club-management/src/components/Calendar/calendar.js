@@ -6,7 +6,7 @@ import "react-datetime/css/react-datetime.css";
 import Modal from 'react-modal'
 import { Link } from 'react-router-dom'
 import Button from '../button/button'
-import AddEventModal from "../addEventModal";
+import AddEventModal from "../addEventModal/addEventModal";
 import './Calendar.css'
 import axios, { Axios } from 'axios'
 import moment from 'react-moment'

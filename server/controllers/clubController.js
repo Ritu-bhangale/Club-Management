@@ -6,9 +6,6 @@ const ErrorHandler = require("../utils/errorHandler");
 exports.createClub = async(req, res, next) => {
 
     const club = await Clubs.create(req.body);
-
-
-
     res.status(201).json({
         success: true,
         club

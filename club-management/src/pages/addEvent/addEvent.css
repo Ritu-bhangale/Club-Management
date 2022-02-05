@@ -1,0 +1,56 @@
+.formAddEvent{
+    background: var(--greyGradient);
+    color: var(--greyOne);
+    padding: 8vh 5vw;
+    border-radius: var(--border-radius-card);
+}
+.addEventHead h1{
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-heading);
+    color: var(--greyOne);
+    margin-top: 10vh;
+    text-align: center;
+}
+.formAddEvent{
+    width: 60%;
+    margin-left: 15%;
+    margin-top: 5vh;
+}
+.formAddEvent p{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 1vh;
+    margin-top: 3vh;
+}
+.formAddEvent input[type=text]{
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    padding: 1vh 2vw 1vh 0vw;
+    outline: none;
+    color: var(--greyOne);
+}
+.react-datetime-picker__wrapper{
+    width: 100%;
+    color: var(--greyOne);
+    border: thin solid var(--greyOne) !important;
+    padding: 1vh 2vw;
+    margin-top: 2vh;
+}
+.react-datetime-picker__inputGroup__input{
+    color: var(--greyOne) !important;
+}
+.react-datetime-picker__button svg{
+    color: var(--greyOne) !important;
+}
+.formAddEvent Button{
+    margin-top: 3vh;
+}
+.react-datetime-picker__inputGroup__hour{
+    margin-left: 2vw;
+}
+.react-datetime-picker__button{
+    margin-left: 2vw;
+}

@@ -27,7 +27,7 @@
     margin-right: 50%;
     margin-top: 35vh;
 }
-.clubHome{
+.clubHome,.eventHome{
     display: flex;
     width: 95w;
     flex-wrap: wrap;

@@ -14,7 +14,7 @@ const ClubCard = ({ club }) => {
                 <div className="rightLogoCardComp">
                     <div className="rightTopCard">
                     <h1 className="h1CardHome">{club.name}</h1>
-                    <a href={club.link} className="vdCardHome" target="_blank"><span>View Details</span></a>
+                    <a href={club.link} className="vdCardHome" target="_blank">Visit Website</a>
                     </div>
                     <p className="paraCardHome">{club.description}</p>
                 </div>

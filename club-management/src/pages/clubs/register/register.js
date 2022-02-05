@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../../components/button/button'
+import Button from '../../../components/button/button'
 import './register.css'
 import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
@@ -8,7 +8,11 @@ function Register() {
     const [data, setData] = useState({
         name: "",
         email: "",
-        password: ""
+        password: "",
+        wingname: "", 
+        website: "", 
+        description: "", 
+        logo: "" 
     });
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -16,14 +20,20 @@ function Register() {
     const handleChange = ({ currentTarget: input }) => {
         setData({ ...data, [input.name]: input.value });
     }
+    const handlePhoto = (e) => {
+        console.log("uploaded")
+        setData({ ...data, logo: e.target.files[0] });
+        console.log(e.target.files[0])
+    }
     //register function 
     const egister = async (e) => {
         e.preventDefault();
         try {
 			const url = "http://localhost:8080/register";
 			const { data: res } = await axios.post(url, data);
-			navigate("/login");
 			console.log(res.message);
+            localStorage.setItem("token", res.data);
+            navigate("/clubs/:id")
 		} catch (error) {
 			if (
 				error.response &&
@@ -67,7 +77,50 @@ function Register() {
                                 onChange={handleChange}
                             />
                             <br />
-                            <input type="submit" value="Register" onClick={egister} />
+                            <p>Club name:</p>
+            <input
+              type="text"
+              required
+              name="name"
+              value={data.name}
+              onChange={handleChange}
+            />
+            <p>Name of Wing:</p>
+            <input
+              type="text"
+              required
+              name="wingname"
+              value={data.wingname}
+              onChange={handleChange}
+            />
+            <p>Website Link:</p>
+            <input
+              type="text"
+              name="website"
+              value={data.website}
+              onChange={handleChange}
+            />
+            <p>About the club:</p>
+            <input
+              type="text"
+              name="description"
+              value={data.description}
+              onChange={handleChange}
+            />
+            <p>Logo of the Club:</p>
+            {/* <input
+              type="file"
+              id='file'
+              name="logo"
+              accept=".png, .jpg, .jpeg"
+              value={data.logo}
+              // onChange={(e) => setLogo(e.target.files[0])}
+              onChange={handlePhoto}
+            /> */}
+            <Button
+              buttonStyle="btn-normal"
+              type="submit"
+              onClick={egister}>Submit</Button>
                         </form>
                     </div>
                 </div>

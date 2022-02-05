@@ -1,10 +1,6 @@
 const { type } = require("express/lib/response")
 const mongoose = require("mongoose")
 const clubSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
     wingname: {
         type: String,
         required: true
@@ -20,7 +16,6 @@ const clubSchema = new mongoose.Schema({
     },
     logo: {
         type: String,
-        required: true
     },
     createdAt: {
         type: Date,

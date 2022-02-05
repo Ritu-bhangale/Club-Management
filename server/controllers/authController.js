@@ -1,4 +1,4 @@
-import Profile from '../models/registerModels.js'
+import Profile from '../models/clubModels.js'
 
 export const registerData = async (req, res) => {
     console.log(req.body)
