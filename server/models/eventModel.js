@@ -12,9 +12,6 @@ const eventSchema = new mongoose.Schema({
     title: {
         type: String,
         required: [true, "Enter title of the event"]
-    },
-    eventby:{
-        type: String
     }
 },
     { timestamps:true},

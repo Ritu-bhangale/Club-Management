@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const clubsurl = "http://localhost:8080/clubs/"
-export const readClubs = () =>axios.get(clubsurl);
+const url = "http://localhost:8080/clubs/61fe5ef847652c890038269a"
 
-const eventurl = "http://localhost:8080/event/"
-export const readEvents = () =>axios.get(eventurl);
+export const readClubs = () =>axios.get(url);

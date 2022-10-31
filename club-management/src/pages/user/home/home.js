@@ -5,8 +5,14 @@ import './home.css'
 import { Link } from 'react-router-dom'
 import ClubCard from '../../../components/clubCard/clubCard';
 import axios from 'axios';
-import { readClubs, readEvents } from '../../../functions';
+import { readClubs } from '../../../functions';
 import EventCard from '../../../components/eventCard/eventCard'
+
+const event={
+    title: "Ace event",
+    start: "12/03/2007 11:00am",
+    end: "12/03/2007 12:30am",
+}
 
 const Home = () => {
     const [clubs, setClubs] = useState([]);
@@ -15,15 +21,6 @@ const Home = () => {
             const result = await readClubs();
             console.log(result)
             setClubs(result.clubs)
-        }
-        fetchData()
-    }, [])
-    const [events, setEvents] = useState([]);
-    useEffect(()=>{
-        const fetchData = async()=>{
-            const output = await readEvents();
-            console.log(output)
-            setEvents(output)
         }
         fetchData()
     }, [])
@@ -37,24 +34,20 @@ const Home = () => {
             </div>
             <div className="eventCardsBelow">
                 <div className="eventContainer">
-                    <div className="eventCardsHead">
                     <h1>Events</h1>
-                    </div>
                     <div className="eventHome">
-                        {events.map(event=>
-                            <EventCard key={event._id} event={event}/>
-                        )}
+                        <EventCard event ={event}/>
+                        <EventCard event ={event}/>
+                        <EventCard event ={event}/>
                     </div>
                 </div>
             </div>
             <div className="clubCardsBelow">
                 <div className="clubContainer" id="clubContainer">
-                <div className="clubCardsHead">
                 <h1>Clubs</h1>
-                </div>
                     <div className="clubHome">
                         {clubs.map(club=>
-                            <ClubCard key={club._id} club={club}/>
+                            <ClubCard key={club.name} club={club}/>
                         )}
                     </div>
                 </div>

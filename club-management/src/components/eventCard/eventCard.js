@@ -9,7 +9,7 @@ const EventCard = ({ event }) => {
                 </div>
                 <div className="eventCardContent">
                 <h1>{event.title}</h1>
-                <h2>Event by : {event.eventby}</h2>
+                <h2>Event by : This club</h2>
                 <img src="" alt="" />
                 <div className="startDate">
                     <p>Event starts at : <span>{event.start}</span></p>

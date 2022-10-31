@@ -11,7 +11,7 @@
 .eventCardComp h1{
     font-size: var(--font-size-semibold);
     font-weight: var(--font-weight-semibold);
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
 }
 .lineCardEvent{
     border-left: var(--orange) 0.2vw solid;
@@ -24,10 +24,4 @@
 }
 .startDate p span, .endDate p span{
     color: var(--orange);
-}
-.eventCardContent h2{
-    color: var(--greyTwo);
-    margin: 0;
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-medium);
 }

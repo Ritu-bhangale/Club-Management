@@ -30,8 +30,10 @@ function Register() {
         e.preventDefault();
         try {
 			const url = "http://localhost:8080/register";
-			await axios.post(url, data);
-            navigate("/clubs/addevent")
+			const { data: res } = await axios.post(url, data);
+			console.log(res.message);
+            localStorage.setItem("token", res.data);
+            navigate("/clubs/:id")
 		} catch (error) {
 			if (
 				error.response &&
@@ -105,7 +107,7 @@ function Register() {
               value={data.description}
               onChange={handleChange}
             />
-            {/* <p>Logo of the Club:</p> */}
+            <p>Logo of the Club:</p>
             {/* <input
               type="file"
               id='file'

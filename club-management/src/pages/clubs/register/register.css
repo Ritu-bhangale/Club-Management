@@ -11,7 +11,6 @@
 .form-part{
     margin-left: 15%;
     margin-top: 15vh;
-    margin-bottom: 10vh;
 }
 p{
     color: var(--greyOne);
@@ -58,24 +57,3 @@ form Button{
     font-weight: var(--font-weight-medium);
     margin-top: 5vh;
 }
-.left-side{
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.left-side::-webkit-scrollbar {
-    width: 0.1vw;
-    height: 1vh;
-  }
-  
-  .left-side::-webkit-scrollbar-track {
-    box-shadow: none;
-    width: 0.1vw;
-    height: 1vh;
-  }
-  
-  .left-side::-webkit-scrollbar-thumb {
-    background-color: var(--brown);
-    outline: 1px solid var(--brown);
-    width: 0.1vw;
-    height: 1vh;
-  }
